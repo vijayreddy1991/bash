@@ -17,7 +17,7 @@ pipelines:
         setup:
           environmentVariables:
             normal:
-              ENV1: value1   
+              vijay: kumar  
           runtime:            
             type: image
             image:
@@ -29,63 +29,29 @@ pipelines:
                 name: drydock/c7node
                 tag: master
                 options: ""
-        requires:
+         triggeredBy:
           resources:
             - bash
-#          triggeredBy:
-#           resources:
-#             - bash
         execution:
           onStart:
-            - test "$ENV1" == "value1"
-            - test "$SECURE_ENV1" == "key"
-          onExecute:
-            - test "$ENV1" == "value1"
             - printenv
-            - test "$SECURE_ENV1" == "key"
-           - sleep 65m
-          onSuccess:
-            - test "$ENV1" == "value1"
-            - test "$SECURE_ENV1" == "key"
-          onFailure:
-            - test "$ENV1" == "value1"
-            - test "$SECURE_ENV1" == "key"
-          onComplete: #always
-            - test "$ENV1" == "value1"
-            - test "$SECURE_ENV1" == "key"
-          onCancel:
-            - test "$ENV1" == "value1"
-            - test "$SECURE_ENV1" == "key"
-       
-      - name: testbash1
-        type: bash
-        requires:
-          resources:
-            - sample_pp
-          steps:
-            - testpipelines
-          integrations:
-            - bindu_dockerHub   
-        triggeredBy:
-          steps:
-            - testbash
-        execution:
-          onStart:
-            - echo "$ENV1" == "value1"
-            - echo "$SECURE_ENV1" == "key"
+#             - test "" == "value1"
+#             - test "$SECURE_ENV1" == "key"
           onExecute:
-            - echo "$ENV1" == "value1"
-            - echo "$SECURE_ENV1" == "key"
-           - sleep 65m
-          onSuccess:
-            - test "$ENV1" == "value1"
-            - test "$SECURE_ENV1" == "key"
-          onFailure:
-            - test "$ENV1" == "value1"
-            - test "$SECURE_ENV1" == "key"
-          onComplete: #always
-            - test "$ENV1" == "value1"
-            - test "$SECURE_ENV1" == "key"
-          onCancel:
-            - test "$ENV1" == "value1"
-            - test "$SECURE_ENV1" == "key"
+            - test "$vijay" == "kumar"
+            - printenv
+#             - test "$SECURE_ENV" == "key"
+#           onSuccess:
+#             - test "$ENV1" == "value1"
+#             - test "$SECURE_ENV" == "key"
+#           onFailure:
+#             - test "$ENV1" == "value1"
+#             - test "$SECURE_ENV" == "key"
+#           onComplete: #always
+#             - test "$ENV1" == "value1"
+#             - test "$SECURE_ENV" == "key"
+#           onCancel:
+#             - test "$ENV1" == "value1"
+#             - test "$SECURE_ENV" == "key"
+
+
