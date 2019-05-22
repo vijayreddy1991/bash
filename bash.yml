@@ -33,17 +33,16 @@ pipelines:
           resources:
             - bash
         execution:
-#           onStart:
-#             - printenv
-# #             - test "" == "value1"
-# #             - test "$SECURE_ENV1" == "key"
-#           onExecute:
-#             - test "$vijay" == "kumar"
-#             - printenv
-# #             - test "$SECURE_ENV" == "key"
-#           onSuccess:
+          onStart:
+            - printenv
+#             - test "" == "value1"
+#             - test "$SECURE_ENV1" == "key"
+          onExecute:
+            - test "$vijay" == "kumar"
+            - printenv
+          onSuccess:
 #             - test "$ENV1" == "value1"
-#             - test "$SECURE_ENV" == "key"
+              - printenv
 #           onFailure:
 #             - test "$ENV1" == "value1"
 #             - test "$SECURE_ENV" == "key"
