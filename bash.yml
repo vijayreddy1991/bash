@@ -29,7 +29,7 @@ pipelines:
                 name: drydock/c7node
                 tag: master
                 options: ""
-         triggeredBy:
+        triggeredBy:
           resources:
             - bash
         execution:
