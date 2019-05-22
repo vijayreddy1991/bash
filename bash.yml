@@ -39,7 +39,7 @@ pipelines:
 #             - test "$SECURE_ENV1" == "key"
           onExecute:
             - test "$vijay" == "kumar"
-            - printenv
+            - printen
           onSuccess:
 #             - test "$ENV1" == "value1"
               - printenv
