@@ -1,5 +1,5 @@
 resources:
-  - name: resource
+  - name: bash
     type: gitRepo
     repoPath: vijayreddy1991/resources
     configuration:
