@@ -1,0 +1,91 @@
+resources:
+  - name: resource
+    type: gitRepo
+    repoPath: vijayreddy1991/resources
+    configuration:
+      integrationName: vijaykumar_github
+      branches:
+        only: master
+    initialVersion:
+      sha: master
+
+pipelines:
+  - name: pipe1
+    steps:
+      - name: testpipelines
+        type: bash
+        setup:
+          environmentVariables:
+            normal:
+              ENV1: value1   
+          runtime:            
+            type: image
+            image:
+#               auto:
+#                 language: nodejs
+#                 versions: 
+#                   - 8.16.0
+              custom:
+                name: drydock/c7node
+                tag: master
+                options: ""
+        requires:
+          resources:
+            - sample_pp 
+#          triggeredBy:
+#           resources:
+#             - sample_pp
+        execution:
+#           onStart:
+#             - test "$ENV1" == "value1"
+#             - test "$SECURE_ENV1" == "key"
+          onExecute:
+            - test "$ENV1" == "value1"
+            - printenv
+#             - test "$SECURE_ENV1" == "key"
+#            - sleep 65m
+#           onSuccess:
+#             - test "$ENV1" == "value1"
+#             - test "$SECURE_ENV1" == "key"
+#           onFailure:
+#             - test "$ENV1" == "value1"
+#             - test "$SECURE_ENV1" == "key"
+#           onComplete: #always
+#             - test "$ENV1" == "value1"
+#             - test "$SECURE_ENV1" == "key"
+#           onCancel:
+#             - test "$ENV1" == "value1"
+#             - test "$SECURE_ENV1" == "key"
+       
+      - name: testpipelines1
+        type: bash
+        requires:
+          resources:
+            - sample_pp
+          steps:
+            - testpipelines
+          integrations:
+            - bindu_dockerHub   
+#         triggeredBy:
+#           steps:
+#             - testpipelines
+        execution:
+#           onStart:
+#             - echo "$ENV1" == "value1"
+#             - echo "$SECURE_ENV1" == "key"
+          onExecute:
+            - echo "$ENV1" == "value1"
+#             - echo "$SECURE_ENV1" == "key"
+#            - sleep 65m
+#           onSuccess:
+#             - test "$ENV1" == "value1"
+#             - test "$SECURE_ENV1" == "key"
+#           onFailure:
+#             - test "$ENV1" == "value1"
+#             - test "$SECURE_ENV1" == "key"
+#           onComplete: #always
+#             - test "$ENV1" == "value1"
+#             - test "$SECURE_ENV1" == "key"
+#           onCancel:
+#             - test "$ENV1" == "value1"
+#             - test "$SECURE_ENV1" == "key"
