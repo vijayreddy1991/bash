@@ -12,7 +12,7 @@ resources:
 pipelines:
   - name: pipe1
     steps:
-      - name: testpipelines
+      - name: testbash
         type: bash
         setup:
           environmentVariables:
@@ -31,33 +31,33 @@ pipelines:
                 options: ""
         requires:
           resources:
-            - sample_pp 
+            - bash
 #          triggeredBy:
 #           resources:
-#             - sample_pp
+#             - bash
         execution:
-#           onStart:
-#             - test "$ENV1" == "value1"
-#             - test "$SECURE_ENV1" == "key"
+          onStart:
+            - test "$ENV1" == "value1"
+            - test "$SECURE_ENV1" == "key"
           onExecute:
             - test "$ENV1" == "value1"
             - printenv
-#             - test "$SECURE_ENV1" == "key"
-#            - sleep 65m
-#           onSuccess:
-#             - test "$ENV1" == "value1"
-#             - test "$SECURE_ENV1" == "key"
-#           onFailure:
-#             - test "$ENV1" == "value1"
-#             - test "$SECURE_ENV1" == "key"
-#           onComplete: #always
-#             - test "$ENV1" == "value1"
-#             - test "$SECURE_ENV1" == "key"
-#           onCancel:
-#             - test "$ENV1" == "value1"
-#             - test "$SECURE_ENV1" == "key"
+            - test "$SECURE_ENV1" == "key"
+           - sleep 65m
+          onSuccess:
+            - test "$ENV1" == "value1"
+            - test "$SECURE_ENV1" == "key"
+          onFailure:
+            - test "$ENV1" == "value1"
+            - test "$SECURE_ENV1" == "key"
+          onComplete: #always
+            - test "$ENV1" == "value1"
+            - test "$SECURE_ENV1" == "key"
+          onCancel:
+            - test "$ENV1" == "value1"
+            - test "$SECURE_ENV1" == "key"
        
-      - name: testpipelines1
+      - name: testbash1
         type: bash
         requires:
           resources:
@@ -66,26 +66,26 @@ pipelines:
             - testpipelines
           integrations:
             - bindu_dockerHub   
-#         triggeredBy:
-#           steps:
-#             - testpipelines
+        triggeredBy:
+          steps:
+            - testbash
         execution:
-#           onStart:
-#             - echo "$ENV1" == "value1"
-#             - echo "$SECURE_ENV1" == "key"
+          onStart:
+            - echo "$ENV1" == "value1"
+            - echo "$SECURE_ENV1" == "key"
           onExecute:
             - echo "$ENV1" == "value1"
-#             - echo "$SECURE_ENV1" == "key"
-#            - sleep 65m
-#           onSuccess:
-#             - test "$ENV1" == "value1"
-#             - test "$SECURE_ENV1" == "key"
-#           onFailure:
-#             - test "$ENV1" == "value1"
-#             - test "$SECURE_ENV1" == "key"
-#           onComplete: #always
-#             - test "$ENV1" == "value1"
-#             - test "$SECURE_ENV1" == "key"
-#           onCancel:
-#             - test "$ENV1" == "value1"
-#             - test "$SECURE_ENV1" == "key"
+            - echo "$SECURE_ENV1" == "key"
+           - sleep 65m
+          onSuccess:
+            - test "$ENV1" == "value1"
+            - test "$SECURE_ENV1" == "key"
+          onFailure:
+            - test "$ENV1" == "value1"
+            - test "$SECURE_ENV1" == "key"
+          onComplete: #always
+            - test "$ENV1" == "value1"
+            - test "$SECURE_ENV1" == "key"
+          onCancel:
+            - test "$ENV1" == "value1"
+            - test "$SECURE_ENV1" == "key"
