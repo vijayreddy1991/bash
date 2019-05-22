@@ -41,8 +41,8 @@ pipelines:
 #           onSuccess:
 # #             - test "$ENV1" == "value1"
 #               - printenv
-           onFailure:
-            - printenv
+          onFailure:
+           - printenv
 #           onComplete: #always
 #             - test "$ENV1" == "value1"
 #             - test "$SECURE_ENV" == "key"
