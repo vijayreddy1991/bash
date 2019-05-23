@@ -26,7 +26,7 @@ pipelines:
 #                 versions: 
 #                   - 8.16.0
               custom:
-                name: drydock/w120node
+                name: drydock/c7node
                 tag: master
                 options: ""
         triggeredBy:
