@@ -26,7 +26,7 @@ pipelines:
 #                 versions: 
 #                   - 8.16.0
               custom:
-                name: drydock/c7node
+                name: drydock/w120node
                 tag: master
                 options: ""
         triggeredBy:
@@ -37,15 +37,15 @@ pipelines:
 #             - printenv
           onExecute:
             - test "$vijay" == "kumar"
-            - printen
+            - printenv
 #           onSuccess:
 # #             - test "$ENV1" == "value1"
 #               - printenv
           onFailure:
            - printenv
-#           onComplete: #always
-#             - test "$ENV1" == "value1"
-#             - test "$SECURE_ENV" == "key"
+          onComplete: #always
+            - test "$vijay" == "kumar"
+            - printenv
 #           onCancel:
 #             - test "$ENV1" == "value1"
 #             - test "$SECURE_ENV" == "key"
