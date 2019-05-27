@@ -21,10 +21,10 @@ pipelines:
           runtime:            
             type: image
             image:
-#               auto:
-#                 language: nodejs
-#                 versions: 
-#                   - 8.16.0
+              auto:
+                language: nodejs
+                versions: 
+                  - 8.16.0
               custom:
                 name: drydock/c7node
                 tag: master
@@ -33,11 +33,11 @@ pipelines:
           resources:
             - bash
         execution:
-#           onStart:
-#             - printenv
+          onStart:
+            - printenv
           onExecute:
             - test "$vijay" == "kumar"
-            - printen
+            - printenv
 #           onSuccess:
 # #             - test "$ENV1" == "value1"
 #               - printenv
