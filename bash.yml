@@ -10,7 +10,7 @@ resources:
       sha: master
 
 pipelines:
-  - name: pipeline
+  - name: pipeline1234
     steps:
       - name: testbash
         type: bash
