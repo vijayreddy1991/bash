@@ -38,6 +38,7 @@ pipelines:
           onExecute:
             - test "$vijay" == "kumar"
             - printenv
+            - echo "vijay"
 #           onSuccess:
 # #             - test "$ENV1" == "value1"
 #               - printenv
