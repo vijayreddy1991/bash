@@ -81,7 +81,7 @@ pipelines:
                 versions: 
                   - 10.15.3
               custom:
-                name: drydock/16node
+                name: drydock/u16node
                 tag: master
                 options: ""
         triggeredBy:
@@ -127,7 +127,7 @@ pipelines:
                 versions: 
                   - 8.16.0
               custom:
-                name: drydock/c7node
+                name: drydock/u16node
                 tag: master
                 options: ""
         triggeredBy:
