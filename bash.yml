@@ -111,7 +111,7 @@ pipelines:
         type: bash
         configuration:
           affinityGroup: kumar@#$%^&*
-#           priority: 
+          priority: 1
 #           timeoutSeconds: <job timeout limit>
           nodePool: kermit_ubuntu18_pool
           chronological: true        
