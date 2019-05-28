@@ -12,7 +12,7 @@ resources:
 pipelines:
   - name: pipeline1234
     steps:
-      - name: testbash
+      - name: testbash1
         type: bash
         configuration:
           affinityGroup: x 
@@ -85,7 +85,7 @@ pipelines:
                 options:
         triggeredBy:
           resources:
-            - testbash
+            - testbash1
         execution:
           onStart:
             - printenv
