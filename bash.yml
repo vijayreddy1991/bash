@@ -71,9 +71,9 @@ pipelines:
             normal:
               ENV1: value1
               ENV2: value2
-            encrypted:
-              SECURE_ENV1: <encrypted secure>
-              SECURE_ENV2: <encrypted secure>
+#             encrypted:
+#               SECURE_ENV1: <encrypted secure>
+#               SECURE_ENV2: <encrypted secure>
           runtime:            
             type: image
             image:
@@ -151,4 +151,3 @@ pipelines:
 #           onCancel:
 #             - test "$ENV1" == "value1"
 #             - test "$SECURE_ENV" == "key"
-
