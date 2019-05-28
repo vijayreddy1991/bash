@@ -15,7 +15,7 @@ pipelines:
       - name: testbash1
         type: bash
         configuration:
-          affinityGroup: x 
+          affinityGroup: x@#$%
 #           priority: 
 #           timeoutSeconds: <job timeout limit>
           nodePool: kermit_ubuntu_pool
@@ -132,7 +132,7 @@ pipelines:
                 options: ""
         triggeredBy:
           steps:
-            - testbash4
+            - testbash2
         execution:
           onStart:
             - printenv
