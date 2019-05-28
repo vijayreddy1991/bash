@@ -145,8 +145,9 @@ pipelines:
           onFailure:
            - printenv
           onComplete: #always
-            - test "$vijay" == "kumar"
+#             - test "$vijay" == "kumar"
             - printenv
           onCancel:
-            - test "$ENV1" == "value1"
-            - test "$SECURE_ENV" == "key"
+#             - test "$ENV1" == "value1"
+#             - test "$SECURE_ENV" == "key"
+              - printenv
