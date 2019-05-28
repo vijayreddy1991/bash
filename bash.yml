@@ -81,9 +81,9 @@ pipelines:
                 versions: 
                   - 10.15.3
               custom:
-                name:
-                tag:
-                options:
+                name: drydock/16node
+                tag: master
+                options: ""
         triggeredBy:
           steps:
             - testbash1
