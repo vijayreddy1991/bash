@@ -113,7 +113,7 @@ pipelines:
           affinityGroup: y 
 #           priority: 
 #           timeoutSeconds: <job timeout limit>
-          nodePool: kermit_ubuntu_pool
+          nodePool: kermit_ubuntu18_pool
           chronological: true        
         setup:
 #           environmentVariables:
@@ -132,7 +132,7 @@ pipelines:
                 options: ""
         triggeredBy:
           steps:
-            - testbash2
+            - testbash4
         execution:
           onStart:
             - printenv
