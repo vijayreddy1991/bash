@@ -19,7 +19,7 @@ pipelines:
 #           priority: 3
 #           timeoutSeconds: <job timeout limit>
           nodePool: kermit_ubuntu_pool
-          chronological: true        
+          chronological: false        
         setup:
 #           environmentVariables:
 #             normal:
