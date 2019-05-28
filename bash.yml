@@ -57,7 +57,6 @@ pipelines:
             - test "$ENV1" == "value1"
             - test "$SECURE_ENV" == "key"
 
-    steps:
       - name: testbash2
         type: bash
         configuration:
@@ -106,48 +105,48 @@ pipelines:
             - test "$ENV1" == "value1"
             - test "$SECURE_ENV" == "key"
             
-#     steps:
-#       - name: testbash3
-#         type: bash
-#         configuration:
-#           affinityGroup: y 
-# #           priority: 
-# #           timeoutSeconds: <job timeout limit>
-#           nodePool: custom__x86_64__Ubuntu_18.04
-#           chronological: true        
-#         setup:
-#           environmentVariables:
-#             normal:
-#               vijay: kumar  
-#           runtime:            
-#             type: image
-#             image:
-#               auto:
-#                 language: nodejs
-#                 versions: 
-#                   - 8.16.0
-#               custom:
-#                 name: drydock/c7node
-#                 tag: master
-#                 options: ""
-#         triggeredBy:
-#           resources:
-#             - testbash2
-#         execution:
-#           onStart:
-#             - printenv
-#           onExecute:
-#             - test "$vijay" == "kumar"
-#             - printenv
-#             - echo "vijay"
-#           onSuccess:
-# #             - test "$ENV1" == "value1"
-#               - printenv
-#           onFailure:
-#            - printenv
-#           onComplete: #always
-#             - test "$vijay" == "kumar"
-#             - printenv
-#           onCancel:
+
+      - name: testbash3
+        type: bash
+        configuration:
+          affinityGroup: y 
+#           priority: 
+#           timeoutSeconds: <job timeout limit>
+          nodePool: custom__x86_64__Ubuntu_18.04
+          chronological: true        
+        setup:
+          environmentVariables:
+            normal:
+              vijay: kumar  
+          runtime:            
+            type: image
+            image:
+              auto:
+                language: nodejs
+                versions: 
+                  - 8.16.0
+              custom:
+                name: drydock/c7node
+                tag: master
+                options: ""
+        triggeredBy:
+          resources:
+            - testbash2
+        execution:
+          onStart:
+            - printenv
+          onExecute:
+            - test "$vijay" == "kumar"
+            - printenv
+            - echo "vijay"
+          onSuccess:
 #             - test "$ENV1" == "value1"
-#             - test "$SECURE_ENV" == "key"
+              - printenv
+          onFailure:
+           - printenv
+          onComplete: #always
+            - test "$vijay" == "kumar"
+            - printenv
+          onCancel:
+            - test "$ENV1" == "value1"
+            - test "$SECURE_ENV" == "key"
