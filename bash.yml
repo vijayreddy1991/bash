@@ -17,6 +17,7 @@ pipelines:
         configuration:
           affinityGroup: vijay@#$%^&*
 #           priority: 3
+#           timeoutSeconds: <job timeout limit>
           nodePool: kermit_ubuntu_pool
           chronological: true        
         setup:
