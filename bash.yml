@@ -84,7 +84,7 @@ pipelines:
                 tag:
                 options:
         triggeredBy:
-          resources:
+          steps:
             - testbash1
         execution:
           onStart:
@@ -130,7 +130,7 @@ pipelines:
                 tag: master
                 options: ""
         triggeredBy:
-          resources:
+          steps:
             - testbash2
         execution:
           onStart:
