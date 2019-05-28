@@ -18,7 +18,7 @@ pipelines:
           affinityGroup: x 
 #           priority: 
 #           timeoutSeconds: <job timeout limit>
-          nodePool: kermit_ubuntu18_pool
+          nodePool: kermit_ubuntu16_pool
           chronological: true        
         setup:
 #           environmentVariables:
@@ -63,7 +63,7 @@ pipelines:
           affinityGroup: y 
 #           priority: 
 #           timeoutSeconds: <job timeout limit>
-          nodePool: ankul_nodes
+          nodePool: kermit_ubuntu18_pool
           chronological: true
         setup:
 #           environmentVariables:
@@ -113,7 +113,7 @@ pipelines:
           affinityGroup: y 
 #           priority: 
 #           timeoutSeconds: <job timeout limit>
-          nodePool: ankul_nodes
+          nodePool: kermit_ubuntu18_pool
           chronological: true        
         setup:
 #           environmentVariables:
