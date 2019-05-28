@@ -132,7 +132,7 @@ pipelines:
                 options: ""
         triggeredBy:
           steps:
-            - testbash2
+            - testbash1
         execution:
           onStart:
             - printenv
