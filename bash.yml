@@ -6,7 +6,7 @@ resources:
       integrationName: vijayku_github
       branches:
         only: master
-    Version:
+    version:
       sha: master
 
 pipelines:
