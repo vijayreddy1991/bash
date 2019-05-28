@@ -77,8 +77,9 @@ pipelines:
             type: image
             image:
               auto:
-                language: 
-                versions:
+                language: nodejs
+                versions: 
+                  - 10.15.3
               custom:
                 name:
                 tag:
