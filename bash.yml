@@ -39,9 +39,9 @@ pipelines:
             - test "$vijay" == "kumar"
             - printenv
             - echo "vijay"
-#           onSuccess:
-# #             - test "$ENV1" == "value1"
-#               - printenv
+          onSuccess:
+#             - test "$ENV1" == "value1"
+              - printenv
           onFailure:
            - printenv
           onComplete: #always
@@ -51,4 +51,67 @@ pipelines:
 #             - test "$ENV1" == "value1"
 #             - test "$SECURE_ENV" == "key"
 
-
+# pipeline:
+#   - name: pipe1
+#     steps:
+#       - name: test_step_1
+#         type: bash
+#         configuration:
+#           affinityGroup: bldGroup 
+#           priority: <[0-10000]>
+#           timeoutSeconds: <job timeout limit>
+#           nodePool: <name of the nodePool>
+#           chronological: <true/false>
+#         setup:
+#           environmentVariables:
+#             normal:
+#               ENV1: value1
+#               ENV2: value2
+#             encrypted:
+#               SECURE_ENV1: <encrypted secure>
+#               SECURE_ENV2: <encrypted secure>
+#           runtime:            
+#             type: <image/host>
+#             image:
+#               auto:
+#                 language:
+#                 versions:
+#               custom:
+#                 name:
+#                 tag:
+#                 options:
+#         requires:
+#           resources:
+#             - someStateResource
+#             - someVersionResource
+#           steps:
+#             - nightlyJob
+#             - cronJob
+#           integrations:
+#             - dockerHubIntegration
+#             - artifactoryIntegration
+      
+#         triggeredBy:
+#           resources:
+#             - someGitRepoResource
+#             - someDockerImageResource
+#           steps:
+#             - ciJob
+#             - deployJob
+#         execution:
+#           onStart:
+#             - echo "Prepping build environment"
+#           onExecute:
+#             - echo "executing task command 1"
+#             - echo "executing task command 2"
+#           onSuccess:
+#             - echo "Job well done!"
+#           onFailure:
+#             - echo "uh oh, something went wrong"
+#           onComplete: #always
+#             - echo "Cleaning up some stuff"
+#           onCancel:
+#             - echo "Someone cancelled the job"
+#         outputResources:
+#           - someOutputResource
+#           - anotherOutputresource
