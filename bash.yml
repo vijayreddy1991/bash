@@ -84,10 +84,28 @@ pipelines:
                 name:
                 tag:
                 options:
-#         requires:
-#           resources:
-#             - someStateResource
-#             - someVersionResource
+        triggeredBy:
+          resources:
+            - testbash
+        execution:
+          onStart:
+            - printenv
+          onExecute:
+            - test "$vijay" == "kumar"
+            - printenv
+            - echo "vijay"
+          onSuccess:
+#             - test "$ENV1" == "value1"
+              - printenv
+          onFailure:
+           - printenv
+          onComplete: #always
+            - test "$vijay" == "kumar"
+            - printenv
+          onCancel:
+            - test "$ENV1" == "value1"
+            - test "$SECURE_ENV" == "key"
+            
     steps:
       - name: testbash3
         type: bash
@@ -114,7 +132,7 @@ pipelines:
                 options: ""
         triggeredBy:
           resources:
-            - bash
+            - testbash2
         execution:
           onStart:
             - printenv
@@ -133,22 +151,4 @@ pipelines:
           onCancel:
             - test "$ENV1" == "value1"
             - test "$SECURE_ENV" == "key"
-      
-          steps:
-            - ciJob
-            - deployJob
-        execution:
-          onStart:
-            - echo "Prepping build environment"
-          onExecute:
-            - echo "executing task command 1"
-            - echo "executing task command 2"
-          onSuccess:
-            - echo "Job well done!"
-          onFailure:
-            - echo "uh oh, something went wrong"
-          onComplete: #always
-            - echo "Cleaning up some stuff"
-          onCancel:
-            - echo "Someone cancelled the job"
 
