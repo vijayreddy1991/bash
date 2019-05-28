@@ -21,9 +21,9 @@ pipelines:
           nodePool: custom__x86_64__Ubuntu_16.04
           chronological: true        
         setup:
-          environmentVariables:
-            normal:
-              vijay: kumar  
+#           environmentVariables:
+#             normal:
+#               vijay: kumar  
           runtime:            
             type: image
             image:
@@ -66,10 +66,10 @@ pipelines:
           nodePool: custom__x86_64__Ubuntu_18.04
           chronological: true
         setup:
-          environmentVariables:
-            normal:
-              ENV1: value1
-              ENV2: value2
+#           environmentVariables:
+#             normal:
+#               ENV1: value1
+#               ENV2: value2
 #             encrypted:
 #               SECURE_ENV1: <encrypted secure>
 #               SECURE_ENV2: <encrypted secure>
@@ -115,9 +115,9 @@ pipelines:
           nodePool: custom__x86_64__Ubuntu_18.04
           chronological: true        
         setup:
-          environmentVariables:
-            normal:
-              vijay: kumar  
+#           environmentVariables:
+#             normal:
+#               vijay: kumar  
           runtime:            
             type: image
             image:
