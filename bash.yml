@@ -1,5 +1,5 @@
 resources:
-  - name: bash1
+  - name: bash
     type: gitRepo
     repoPath: vijayreddy1991/resources
     configuration:
@@ -37,7 +37,7 @@ pipelines:
                 options: ""
         triggeredBy:
           resources:
-            - bash1
+            - bash
         execution:
           onStart:
             - printenv
