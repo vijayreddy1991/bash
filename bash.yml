@@ -42,7 +42,7 @@ pipelines:
           onStart:
             - printenv
           onExecute:
-            - test "$vijay" == "kumar"
+#             - test "$vijay" == "kumar"
             - printenv
             - echo "vijay"
 #           onSuccess:
@@ -91,7 +91,7 @@ pipelines:
           onStart:
             - printenv
           onExecute:
-            - test "$vijay" == "kumar"
+#             - test "$vijay" == "kumar"
             - printenv
             - echo "vijay"
 #           onSuccess:
@@ -137,7 +137,7 @@ pipelines:
           onStart:
             - printenv
           onExecute:
-            - test "$vijay" == "kumar"
+#             - test "$vijay" == "kumar"
             - printenv
             - echo "vijay"
 #           onSuccess:
