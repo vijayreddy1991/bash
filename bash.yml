@@ -33,7 +33,7 @@ pipelines:
               custom:
                 name: vijaydocker1991/w19node
                 tag: master
-                  options: ""
+                options: ""
         requires:                  
           integrations:
             - vijaydocker
