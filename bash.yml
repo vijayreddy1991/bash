@@ -127,7 +127,7 @@ pipelines:
             - printenv
             - echo "vijay"
 #           onSuccess:
-# #             - test "$ENV1" == "value1"
+#             - test "$ENV1" == "value1"
 #               - printenv
 #           onFailure:
 #            - printenv
