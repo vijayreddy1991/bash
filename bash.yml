@@ -110,7 +110,7 @@ pipelines:
       - name: testbash3
         type: bash
         configuration:
-          affinityGroup: vijay@#$%^&*
+          affinityGroup: kumar@#$%^&*
 #           priority: 1
 #           timeoutSeconds: <job timeout limit>
           nodePool: kermit_ubuntu18_pool
