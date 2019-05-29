@@ -31,8 +31,8 @@ pipelines:
 #                 versions: 
 #                   - 8.16.0
               custom:
-                name: vijaydocker1991/w19node
-                tag: master
+                name: vijaydocker1991/microsoft
+                tag: vijay
                 options: ""
         requires:                  
           integrations:
