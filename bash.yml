@@ -44,17 +44,6 @@ pipelines:
 #             - test "$vijay" == "kumar"
             - printenv
             - echo "vijay"
-#           onSuccess:
-# #             - test "$ENV1" == "value1"
-#               - printenv
-#           onFailure:
-#            - printenv
-#           onComplete: #always
-#             - test "$vijay" == "kumar"
-#             - printenv
-#           onCancel:
-#             - test "$ENV1" == "value1"
-#             - test "$SECURE_ENV" == "key"
 
       - name: testbash2
         type: bash
