@@ -91,7 +91,6 @@ pipelines:
 #             - printenv
 #           onCancel:
 #             - test "$ENV1" == "value1"
-#             - test "$SECURE_ENV" == "key"
             
 
       - name: testbash3
