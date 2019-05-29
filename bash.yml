@@ -48,6 +48,7 @@ pipelines:
 #             - test "$vijay" == "kumar"
             - printenv
             - echo "vijay"
+            - java --version
 
       - name: testbash2
         type: bash
