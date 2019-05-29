@@ -31,8 +31,8 @@ pipelines:
 #                 versions: 
 #                   - 8.16.0
               custom:
-                name: vijaydocker1991/microsoft
-                tag: vijay
+                name: vijaydocker1991/javaimage
+                tag: latest
                 options: ""
         requires:                  
           integrations:
