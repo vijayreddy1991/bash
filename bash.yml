@@ -61,10 +61,10 @@ pipelines:
         type: bash
         configuration:
           affinityGroup: vijay@#$%^&*
-          priority: 2
+#           priority: 2
 #           timeoutSeconds: <job timeout limit>
-          nodePool: kermit_ubuntu_pool
-          chronological: false
+#           nodePool: kermit_ubuntu_pool
+#           chronological: false
         setup:
 #           environmentVariables:
 #             normal:
@@ -111,10 +111,10 @@ pipelines:
         type: bash
         configuration:
           affinityGroup: vijay@#$%^&*
-          priority: 1
+#           priority: 1
 #           timeoutSeconds: <job timeout limit>
-          nodePool: kermit_ubuntu_pool
-          chronological: false        
+          nodePool: kermit_ubuntu18_pool
+#           chronological: false        
         setup:
 #           environmentVariables:
 #             normal:
@@ -132,7 +132,7 @@ pipelines:
                 options: ""
         triggeredBy:
           steps:
-            - testbash1
+            - testbash2
         execution:
           onStart:
             - printenv
