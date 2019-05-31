@@ -9,6 +9,7 @@ resources:
     version:
       sha: master
       
+      
 pipelines:
   - name: pipeline1234
     steps:
