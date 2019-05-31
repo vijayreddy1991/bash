@@ -15,7 +15,7 @@ pipelines:
       - name: testbash1
         type: bash
         configuration:
-          affinityGroup: vijay
+          affinityGroup: vijaykumar
           nodePool: kermit_ubuntu_pool    
         setup:
           runtime:            
