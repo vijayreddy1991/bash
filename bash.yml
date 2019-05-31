@@ -37,9 +37,9 @@ pipelines:
         requires:
           resources:
             - bash              
-        triggeredBy:
-          resources:
-            - bash
+#         triggeredBy:
+#           resources:
+#             - bash
         execution:
           onStart:
             - printenv
