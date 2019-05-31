@@ -34,10 +34,6 @@ pipelines:
                 name: node
                 tag: latest
                 options: ""
-        requires:                  
-          integrations:
-            - vijaydocker
-       
         triggeredBy:
           resources:
             - bash
