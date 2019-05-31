@@ -42,76 +42,76 @@ pipelines:
             - printenv
             - echo "vijay"
 
-      - name: testbash2
-        type: bash
-        configuration:
-          affinityGroup: vijay
-#           priority: 2
-#           timeoutSeconds: <job timeout limit>
-          nodePool: kermit_ubuntu_pool
-#           chronological: false
-        setup:
-          runtime:            
-            type: image
-            image:
-              auto:
-                language: nodejs
-                versions: 
-                  - 10.15.3
-              custom:
-                name: drydock/u16node
-                tag: master
-                options: ""
-        triggeredBy:
-          steps:
-            - testbash1
-        execution:
-          onStart:
-            - printenv
-          onExecute:
-#             - test "$vijay" == "kumar"
-            - printenv
-            - echo "vijay"
-#           onSuccess:
-#               - printenv
-#           onFailure:
-#            - printenv
-#           onComplete: #always
-#             - test "$vijay" == "kumar"
+#       - name: testbash2
+#         type: bash
+#         configuration:
+#           affinityGroup: vijay
+# #           priority: 2
+# #           timeoutSeconds: <job timeout limit>
+#           nodePool: kermit_ubuntu_pool
+# #           chronological: false
+#         setup:
+#           runtime:            
+#             type: image
+#             image:
+#               auto:
+#                 language: nodejs
+#                 versions: 
+#                   - 10.15.3
+#               custom:
+#                 name: drydock/u16node
+#                 tag: master
+#                 options: ""
+#         triggeredBy:
+#           steps:
+#             - testbash1
+#         execution:
+#           onStart:
 #             - printenv
-#           onCancel:
-#             - test "$ENV1" == "value1"
+#           onExecute:
+# #             - test "$vijay" == "kumar"
+#             - printenv
+#             - echo "vijay"
+# #           onSuccess:
+# #               - printenv
+# #           onFailure:
+# #            - printenv
+# #           onComplete: #always
+# #             - test "$vijay" == "kumar"
+# #             - printenv
+# #           onCancel:
+# #             - test "$ENV1" == "value1"
             
 
-      - name: testbash3
-        type: bash
-        configuration:
-          affinityGroup: kumar
-#           priority: 1
-#           timeoutSeconds: <job timeout limit>
-          nodePool: kermit_ubuntu_pool
-#           chronological: false        
-        setup:
-#           environmentVariables:
-#             normal:
-#               vijay: kumar  
-          runtime:            
-            type: image
-            image:
-              auto:
-                language: nodejs
-                versions: 
-                  - 8.16.0
-              custom:
-                name: drydock/u16node
-                tag: master
-                options: ""
-        triggeredBy:
-          steps:
-            - testbash2
-        execution:
-          onStart:
-            - printenv
-          onExecute:
-            - printenv
-            - echo "vijay"
+#       - name: testbash3
+#         type: bash
+#         configuration:
+#           affinityGroup: kumar
+# #           priority: 1
+# #           timeoutSeconds: <job timeout limit>
+#           nodePool: kermit_ubuntu_pool
+# #           chronological: false        
+#         setup:
+# #           environmentVariables:
+# #             normal:
+# #               vijay: kumar  
+#           runtime:            
+#             type: image
+#             image:
+#               auto:
+#                 language: nodejs
+#                 versions: 
+#                   - 8.16.0
+#               custom:
+#                 name: drydock/u16node
+#                 tag: master
+#                 options: ""
+#         triggeredBy:
+#           steps:
+#             - testbash2
+#         execution:
+#           onStart:
+#             - printenv
+#           onExecute:
+#             - printenv
+#             - echo "vijay"
