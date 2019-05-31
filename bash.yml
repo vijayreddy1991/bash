@@ -15,7 +15,7 @@ pipelines:
       - name: testbash1
         type: bash
         configuration:
-          affinityGroup: vijay@#$%^&*
+          affinityGroup: vijay
 #           priority: 3
           nodePool: kermit_ubuntu_pool
           chronological: true     
@@ -53,7 +53,7 @@ pipelines:
       - name: testbash2
         type: bash
         configuration:
-          affinityGroup: vijay@#$%^&*
+          affinityGroup: vijay
 #           priority: 2
 #           timeoutSeconds: <job timeout limit>
           nodePool: kermit_ubuntu_pool
@@ -101,7 +101,7 @@ pipelines:
       - name: testbash3
         type: bash
         configuration:
-          affinityGroup: kumar@#$%^&*
+          affinityGroup: kumar
 #           priority: 1
 #           timeoutSeconds: <job timeout limit>
           nodePool: kermit_ubuntu_pool
