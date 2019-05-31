@@ -29,9 +29,9 @@ pipelines:
                 name: node
                 tag: latest
                 options: ""
-#         requires:
-#           resources:
-#             - bash              
+        requires:
+          resources:
+            - bash              
         triggeredBy:
           resources:
             - bash
