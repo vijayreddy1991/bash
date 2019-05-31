@@ -34,9 +34,12 @@ pipelines:
                 name: node
                 tag: latest
                 options: ""
-        triggeredBy:
+        requires:
           resources:
-            - bash
+            - bash              
+#         triggeredBy:
+#           resources:
+#             - bash
         execution:
           onStart:
             - printenv
