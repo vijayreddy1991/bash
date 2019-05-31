@@ -1,4 +1,14 @@
-
+resources:
+  - name: git
+    type: gitRepo
+    repoPath: vijayreddy1991/jfrogtesting
+    configuration:
+      integrationName: github_vijay
+      branches:
+        only: master
+    version:
+      sha: master
+      
 pipelines:
   - name: pipeline1234
     steps:
