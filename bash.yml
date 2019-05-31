@@ -18,7 +18,7 @@ pipelines:
           affinityGroup: vijay
 #           priority: 3
           nodePool: kermit_ubuntu_pool
-          chronological: true     
+#           chronological: true     
         setup:
 #           environmentVariables:
 #             normal:
