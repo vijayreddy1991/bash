@@ -1,13 +1,3 @@
-resources:
-  - name: bash
-    type: gitRepo
-    repoPath: vijayreddy1991/bash
-    configuration:
-      integrationName: vijayku_github
-      branches:
-        only: master
-    version:
-      sha: master
 
 pipelines:
   - name: pipeline1234
@@ -29,12 +19,12 @@ pipelines:
                 name: node
                 tag: latest
                 options: ""
-        requires:
-          resources:
-            - bash              
+#         requires:
+#           resources:
+#             - git              
         triggeredBy:
           resources:
-            - bash
+            - git
         execution:
           onStart:
             - printenv
