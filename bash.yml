@@ -16,20 +16,15 @@ pipelines:
         type: bash
         configuration:
           affinityGroup: vijay
-#           priority: 3
-          nodePool: kermit_ubuntu_pool
-#           chronological: true     
+          nodePool: kermit_ubuntu_pool    
         setup:
-#           environmentVariables:
-#             normal:
-#               vijay: kumar  
           runtime:            
             type: image
             image:
-#               auto:
-#                 language: nodejs
-#                 versions: 
-#                   - 8.16.0
+              auto:
+                language: nodejs
+                versions: 
+                  - 8.16.0
               custom:
                 name: node
                 tag: latest
@@ -37,17 +32,15 @@ pipelines:
         requires:
           resources:
             - bash              
-#         triggeredBy:
-#           resources:
-#             - bash
+        triggeredBy:
+          resources:
+            - bash
         execution:
           onStart:
             - printenv
           onExecute:
-#             - test "$vijay" == "kumar"
             - printenv
             - echo "vijay"
-            - java -version
 
       - name: testbash2
         type: bash
