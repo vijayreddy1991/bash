@@ -51,13 +51,6 @@ pipelines:
           nodePool: kermit_ubuntu_pool
 #           chronological: false
         setup:
-#           environmentVariables:
-#             normal:
-#               ENV1: value1
-#               ENV2: value2
-#             encrypted:
-#               SECURE_ENV1: <encrypted secure>
-#               SECURE_ENV2: <encrypted secure>
           runtime:            
             type: image
             image:
